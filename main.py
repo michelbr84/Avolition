@@ -70,13 +70,13 @@ from panda3d.core import WindowProperties
 
 
 wp = WindowProperties.getDefault()
-wp.setFixedSize(True)
+wp.setFixedSize(False)
 wp.setCursorHidden(False)
 wp.setFullscreen(False)
-wp.setUndecorated(True)
+wp.setUndecorated(False)
 wp.setTitle("Avolition - Configuration")
-wp.setSize(512,512)
-wp.setOrigin(-2,-2)
+wp.setSize(800,600)
+wp.setOrigin(100,100)
 WindowProperties.setDefault(wp)
 
 

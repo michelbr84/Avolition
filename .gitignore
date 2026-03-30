@@ -219,3 +219,43 @@ pip-log.txt
 ############
 
 autoconfig.txt
+save.dat
+
+#############
+## Python virtual environments
+#############
+
+avolition_env/
+venv/
+.venv/
+env/
+
+#############
+## Python cache
+#############
+
+__pycache__/
+*.py[cod]
+
+#############
+## IDE / Editor
+#############
+
+.vscode/
+.idea/
+*.code-workspace
+
+#############
+## Config / Secrets
+#############
+
+.env
+.env.local
+modern_config.json
+
+#############
+## ClaudeMaxPower
+#############
+
+.claude/audit.log
+.estado.md
