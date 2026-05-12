@@ -220,6 +220,9 @@ pip-log.txt
 
 autoconfig.txt
 save.dat
+saves/
+config/autoconfig.txt
+config/game_config.json
 
 #############
 ## Python virtual environments

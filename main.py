@@ -85,7 +85,6 @@ from panda3d.core import *
 import direct.directbase.DirectStart
 from direct.showbase.DirectObject import DirectObject
 import sys
-#import collections
 
 
 class Config(DirectObject):
@@ -288,7 +287,7 @@ class Config(DirectObject):
             self.safeModeButton['frameTexture']='glass.png'
         else:
             self.options['safemode']=False
-        self.set_option("resolution", str(config_win_size.getWord(0))+" "+str(config_win_size.getWord(1)))    
+        self.set_option("resolution", str(config_win_size.getWord(0))+" "+str(config_win_size.getWord(1)))
         #keyboard setup:
         self.font = loader.loadFont('Bitter-Bold.otf')
         self.font.setPixelsPerUnit(16)
@@ -650,14 +649,9 @@ class Config(DirectObject):
             else:
                 temp.write("safemode 0\n")
             for key in self.keymap:
-                temp.write(key+" "+self.keymap[key][0]+"|"+self.keymap[key][1]+"\n") 
+                temp.write(key+" "+self.keymap[key][0]+"|"+self.keymap[key][1]+"\n")
 
         self.background['frameTexture']="loading2.png"
-        #print self.options
-        #sys.exit()
-        #base.openMainWindow()
-        #base.exitfunc( )
-        #print "I'm out"
         self.clean_up()
         from game import Game
         game=Game(self.background, self)
@@ -665,7 +659,6 @@ class Config(DirectObject):
 
     def save_and_exit(self, event=None):
         print("exit")
-        #base.closeWindow(base.win)
         with open(path+"autoconfig.txt", "w") as temp:
             temp.write("#auto generated config file\n")
             temp.write("#use config.txt to hand-edit custom options\n")
@@ -689,7 +682,7 @@ class Config(DirectObject):
             else:
                 temp.write("safemode 0\n")
             for key in self.keymap:
-                temp.write(key+" "+self.keymap[key][0]+"|"+self.keymap[key][1]+"\n")         
+                temp.write(key+" "+self.keymap[key][0]+"|"+self.keymap[key][1]+"\n")
         sys.exit()
 main = Config()
 run()

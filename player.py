@@ -742,23 +742,23 @@ class PC1(DirectObject):
                 self.cameraNode.setHpr(newHpr)
                 self.camera_momentum+=dt*3
                 
-        if self.camera_momentum>10.0:
-            self.camera_momentum=10.0            
-        #rotate camera  
-        if self.keyMap["key_cam_right"]:    
-            self.cameraNode.setH(self.cameraNode, -70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
-        elif self.keyMap["key_cam_left"]:        
-            self.cameraNode.setH(self.cameraNode, 70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
+        if self.camera_momentum>3.0:
+            self.camera_momentum=3.0
+        #rotate camera
+        if self.keyMap["key_cam_right"]:
+            self.cameraNode.setH(self.cameraNode, -35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
+        elif self.keyMap["key_cam_left"]:
+            self.cameraNode.setH(self.cameraNode, 35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
         else:
-            self.camera_momentum=0          
-            
+            self.camera_momentum=max(0, self.camera_momentum - dt*6.0)
+
         if self.HP<=0:
-            return task.again        
-        
-        self.common['traverser'].traverse(render) 
-        hit_wall=False        
+            return task.again
+
+        self.common['traverser'].traverse(render)
+        hit_wall=False
         self.myWaypoints=[]
         for entry in self.common['queue'].getEntries():
             if entry.getFromNodePath().hasTag("player"):
@@ -1779,22 +1779,22 @@ class PC2(DirectObject):
         if self.projectile.vfx and not self.isBoom:
             self.plasma_coll.setPos(self.projectile.vfx.getPos())
        
-        if self.camera_momentum>10.0:
-            self.camera_momentum=10.0
-        #rotate camera  
-        if self.keyMap["key_cam_right"]:    
-            self.cameraNode.setH(self.cameraNode, -70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
-        elif self.keyMap["key_cam_left"]:        
-            self.cameraNode.setH(self.cameraNode, 70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
+        if self.camera_momentum>3.0:
+            self.camera_momentum=3.0
+        #rotate camera
+        if self.keyMap["key_cam_right"]:
+            self.cameraNode.setH(self.cameraNode, -35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
+        elif self.keyMap["key_cam_left"]:
+            self.cameraNode.setH(self.cameraNode, 35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
         else:
-            self.camera_momentum=0          
-            
+            self.camera_momentum=max(0, self.camera_momentum - dt*6.0)
+
         if self.HP<=0:
-            return task.again        
-        
-        self.common['traverser'].traverse(render) 
+            return task.again
+
+        self.common['traverser'].traverse(render)
         hit_wall=False  
         self.hitMonsters=set()    
         self.myWaypoints=[]
@@ -2818,23 +2818,23 @@ class PC3(DirectObject):
                 self.cameraNode.setHpr(newHpr)
                 self.camera_momentum+=dt*3
                 
-        if self.camera_momentum>10.0:
-            self.camera_momentum=10.0            
-        #rotate camera  
-        if self.keyMap["key_cam_right"]:    
-            self.cameraNode.setH(self.cameraNode, -70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
-        elif self.keyMap["key_cam_left"]:        
-            self.cameraNode.setH(self.cameraNode, 70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
+        if self.camera_momentum>3.0:
+            self.camera_momentum=3.0
+        #rotate camera
+        if self.keyMap["key_cam_right"]:
+            self.cameraNode.setH(self.cameraNode, -35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
+        elif self.keyMap["key_cam_left"]:
+            self.cameraNode.setH(self.cameraNode, 35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
         else:
-            self.camera_momentum=0          
-            
+            self.camera_momentum=max(0, self.camera_momentum - dt*6.0)
+
         if self.HP<=0:
-            return task.again        
-        
-        self.common['traverser'].traverse(render) 
-        hit_wall=False        
+            return task.again
+
+        self.common['traverser'].traverse(render)
+        hit_wall=False
         self.myWaypoints=[]
         for entry in self.common['queue'].getEntries():
             if entry.getFromNodePath().hasTag('arrow'):                
@@ -3853,23 +3853,23 @@ class PC4(DirectObject):
                 self.cameraNode.setHpr(newHpr)
                 self.camera_momentum+=dt*3
                 
-        if self.camera_momentum>10.0:
-            self.camera_momentum=10.0            
-        #rotate camera  
-        if self.keyMap["key_cam_right"]:    
-            self.cameraNode.setH(self.cameraNode, -70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
-        elif self.keyMap["key_cam_left"]:        
-            self.cameraNode.setH(self.cameraNode, 70*dt* self.camera_momentum)
-            self.camera_momentum+=dt*3
+        if self.camera_momentum>3.0:
+            self.camera_momentum=3.0
+        #rotate camera
+        if self.keyMap["key_cam_right"]:
+            self.cameraNode.setH(self.cameraNode, -35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
+        elif self.keyMap["key_cam_left"]:
+            self.cameraNode.setH(self.cameraNode, 35*dt* self.camera_momentum)
+            self.camera_momentum+=dt*1.5
         else:
-            self.camera_momentum=0          
-            
+            self.camera_momentum=max(0, self.camera_momentum - dt*6.0)
+
         if self.HP<=0:
-            return task.again        
-        
-        self.common['traverser'].traverse(render) 
-        hit_wall=False 
+            return task.again
+
+        self.common['traverser'].traverse(render)
+        hit_wall=False
         self.canTeleport=False   
         self.playerHit=False
         self.myWaypoints=[]
